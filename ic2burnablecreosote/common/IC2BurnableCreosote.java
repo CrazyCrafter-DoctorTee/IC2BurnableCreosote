@@ -16,7 +16,10 @@ public class IC2BurnableCreosote {
     
     @EventHandler
     public void postInit(FMLInitializationEvent event){
-    	Recipes.semiFluidGenerator.addFluid("liquid.creosote", 0, 0);
+    	for(Fluid val : FluidRegistry.getRegisteredFluids().values()){
+    		System.out.println(FluidRegistry.getFluidName(val));
+    	}
+    	Recipes.semiFluidGenerator.addFluid("creosote", 20, 16);
     	
     }
 }
